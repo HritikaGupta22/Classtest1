@@ -1,0 +1,357 @@
+# ---*---*---*---*---*---*---*---*---*---*--- 
+"""
+INTRODUCTION TO PYTHON
+**********************
+Software : PYTHON 3.8.x | IDE: Spyder, Jupyter, Google Colab
+Author : Dr. Amarnath Mitra | Email : amarnath.mitra@gmail.com
+Updated : Aug, 2023
+"""
+# ---*---*---*---*---*---*---*---*---*---*---
+
+# =================================================================================================
+
+# Python : Topics
+# ---------------
+
+# 1. Basic Data Types : Numbers, Strings, Boolean, None
+# 2. Basic Data Structures : Range, List, Tuple, Set, Dictionary
+# 3. Basic File Input & Output : print, input, open, read, write 
+# 4. Basic Programing : Conditions, Loops, (User-Defined) Functions
+# 5. Basic List of Built-in Modules or Libraries
+
+# *************************************************************************************************
+
+# 1. Basic Data Types : Numbers, Strings, Boolean, None
+# -----------------------------------------------------
+
+# 1.1. Numbers : Integer, Float
+# -----------------------------
+n_int = 2023; n_int
+type(n_int)
+n_float = 9.8; n_float
+type(n_float)
+n_nan_float = nan; n_nan_float
+type(n_nan_float) 
+pi_float = pi; pi_float 
+
+# 1.1.1. Numeric Operations
+# -------------------------
+n1 = 1; n2 = 2; n3 = 3; n4 = 4; n5 = 5
+n11 = n3 + n2 - n1; n11 # Addition & Substraction
+n12 = (n11 * n4) / n5; n12 # Multiplication & Division
+n13 = n12 ** n2; n13 # Exponent or Power
+n14 = round(n13, 2); n14 # Round Off with Decimal Places (DP = 2)
+# Add log log10 exp sqrt abs mod round pow function information
+
+# 1.2. Strings or Text
+# --------------------
+s_single_quotes = 'Python'; type(s_single_quotes)
+s_double_quotes = "Python, it's a programing language"; type(s_double_quotes)
+s_triple_quotes = '''Python language, it's "Incredible!"'''; type(s_triple_quotes)
+s_numeric = '1947'; type(s_numeric) # Numeric String
+s_empty = ''; type(s_empty) # Empty String
+
+# 1.2.1. String Operations
+# ------------------------
+s0 = 'python' # 5 Letter Word : Letter Positions with Index beginning with 0 {0:p, 1:y, 2:t, 3:h, 4:o, 5:n}
+l = len(s0); l # Length of Word >> Count of Letters in the Word
+s0[0] # 1st Letter >> p
+s0[1] # 2nd Letter >> y
+s0[5], s0[l-1] # Last Letter >> n
+s0[6]; s0[l] # Out of Range
+s0[-1] # Last Letter >> n
+s0[-2] # 2nd Last Letter >> o
+s0[-6], s0[-l] # 1st etter >> p
+s0[0:2] # Include 1st 2 Letters, 3rd Letter Excluded >> py
+s0[:3] # Letters from Index Positions 0 to 2 >> pyt
+s0[3:] # Letters from Index Positions 3 to End >> hon
+s0[:3] + s0[3:] # Complete Word
+s0[::-1] # Word in Reverse >> nohtyp
+list(s0) # Splits Word into a List of Individual Characters 
+s1 = 'i love python'; list(s1.split()) # Splits Sentence into a List of Individual Words 
+
+# 1.3. Boolean : True, False, And [&], Or [|], Not [~]
+# ----------------------------------------------------
+b1 = True; type(b1)
+b2 = True and False; type(b2)
+b3 = True | False; type(b3)
+
+# 1.4. None
+# ---------
+no = None; type(no)
+
+# ************************************************************************************************* 
+
+# 2. Basic Data Structures : Range, List, Tuple, Set, Dictionary
+# --------------------------------------------------------------
+
+# 2.1. Range
+# ----------
+r1 = range(5); r1 # 5 Whole Number Elements = {0, 1, 2, 3, 4} | 5 not included
+type(r1)
+list(r1)
+r2 = range(0, 10, 2); list(r2) # 0 to 10 with increment of 2 = {0, 2, 4, 6, 8} | 10 not included
+r3 = range(5, 0, -1); list(r3) # 5 to 0 with decrement of 1 = {5, 4, 3, 2, 1} | 0 not included
+
+# 2.2. List []
+# ------------
+l0 = []; l0 # Empty List
+type(l0)
+l1 = [0, 1, 1, 2, 3, 5, 8]; l1 # Simple List | List Element Index = {0:0, 1:1, 2:1, 3:2, 4:3, 5:5, 6:8}
+type(l1)
+l2 = list((1, 'Two', None, [True, False])); l2 # Complex List | List Element Index = {0:1, 1:Two, 2:None, 3:[True, False]}
+type(l2)
+
+# 2.2.1. List Operations 
+# ----------------------
+len(l1), len(l2) # Length of List
+l2[0] # Extract 1st Element [Index=0] of List
+l2[1] # Extract 2nd Element [Index=1] of List
+l2[-1], l2[len(l2)-1] # Extract Last Element [Index=3] of List
+l1[1:5] # Extract 2nd to 5th Element [Index=1,2,3,4] of List
+l1[2:] # Extract 3rd to Last Element [Index=2,3,4,5,6] of List
+l1[:5] # Extract 1st to 5th Element [Index=0,1,2,3,4] of List
+l2[1] = 'Twenty Two'; l2 # Replace 2nd Element [Index=1] of List
+l2[0:2] = [1.2, 'Twelve']; l2 # Replace 1st 2 Elements [Index=0,1] of List
+l2.insert(1, 2022); l2 # Insert New Element in 2nd Position [Index=1] in List 
+l_new1 = 13; l1.append(l_new1); l1 # Append List with New Element (At the End)
+l_new2 = [21, 34, 55]; l1.extend(l_new2); l1 # Extend List with New List of Elements (At the End)
+l1.remove(55); l1 # Remove Specific Element from List
+l2.pop(1); l2 # Remove 2nd Element by Index [Index=1] from List
+del l1[8:]; l1 # Remove Multiple Element by Index [Index=8 Onwards] from List
+l_new2.clear() # Removes All Elements from List
+l1.sort(reverse=True); l1 # Sort List in Descending Order
+l1.sort(); l1 # Sort List in Ascending Order
+l2.reverse(); l2, l2[::-1] # Reverse Order of List
+l3 = ['a', 'b', 'c']; l4 = [1, 2, 3]
+l34 = l3 + l4; l34 # Join 2 List
+
+# 2.3. Tuple ()
+# -------------
+t = (0, 1, 1, 2, 3, 5, 8); t # Non-Editable List
+type(t)
+
+# 2.3.1. Edit | Update Tuple
+# --------------------------
+t_list = list(t); t_list
+new_list = [13, 21, 34]; t_list.extend(new_list)
+t_new = tuple(t_list); t_new # Edited or Updated Tuple
+
+# 2.4. Set {}
+# -----------
+s = {0, 1, 1, 2, 3, 5, 8}; s # Set of Unique Elements
+type(s)
+
+# 2.4.1. Set Operations
+# ---------------------
+s1 = {2, 0, 2, 1}; s2 = {2, 0, 2, 3}; s1, s2
+s12_union1 = s1.union(s2); s12_union1 # Union of 2 Set
+s12_union2 = s1 | s2; s12_union2 # Union of 2 Set
+s12_intersection1 = s1.intersection(s2); s12_intersection1 # Intersection of 2 Set
+s12_intersection2 = s1 & s2; s12_intersection2 # Intersection of 2 Set
+s12_difference = s1.difference(s2); s12_difference  # Difference of 2 Set
+s21_difference = s2 - s1; s21_difference # Difference of 2 Set
+s.add(13); s # Add New Unique Element to Set
+
+# 2.5. Dict : Dictionary {key : value} Pair
+# -----------------------------------------
+d = {'Name': 'Alexa', 'Gender': 'Female', 'Age': 19, 'Income': 1000}; d # Keys must be Unique
+type(d)
+
+# 2.5.1. Dict Operations
+# ----------------------
+d.keys() # List of All Keys
+d.values() # List of All Values
+d['Name'] # Get Value from the Key
+d['Income'] = 2000; d # Update the Value of a Key
+d.update({'Place': 'USA'}); d # Update the Dictionary
+d.pop('Place'); d # Remove a Key along with its Value 
+
+# ************************************************************************************************* 
+
+# 3. Basic File Input & Output : print, input, open, read, write 
+# --------------------------------------------------------------
+
+# Input
+num = input('Enter a Number: ')
+num
+
+# Output
+print('Hello Python!')
+print('Hello Python! \nHi Anaconda') # \n: Print in New Line
+
+name = 'World'
+print('Hello', name) # Output of Two or More Strings Combined
+print(f'Hello {name}!, This is Python!') # Output using Format String (f)
+
+# Access Data Files from Working Directory to Read & Write
+'''
+Before working with Data Files :
+1. Check the Current Working Directory. It is the Current or Default Working Directory.
+2. Create a Folder at a Desired Location (say, Desktop, Documents, C/D Drive).
+3. Keep all relevant Data | Python Files in the Desired Folder for easy access.
+4. Note or Copy the Path of Location of the Created Folder.
+5. Change the Current Working Directory to the Desired Folder Location.
+'''
+
+# Required Library
+import os
+
+# Get Current Working Directory
+os.getcwd()
+
+# Create a Folder (Example : 'Python_Folder') in a Desired Location (Example : Desktop)
+# Note or Copy the Path of Location of the Created Folder.
+
+# New Working Directory Path : Use Raw String (r)
+nwd_path = r'C:\Users\***\***\Desktop\Python_Folder'
+
+# Change Current Working Directory to Desired Folder Location
+os.chdir(nwd_path) 
+
+os.getcwd() # Verify whether Current Working Directory is in the Desired Folder Location
+
+# Create a Text File (Example : 'py_test_file.txt') in the 'Python_Folder' containing the following line 'This is a Test File.'
+
+# Open the Text File to Read & Write
+tf = open('py_test_file.txt', 'r+') # r+ : Read & Write Mode
+
+# Read the Contents of the File
+print(tf.read()) 
+
+# Write (additional) Contents to the File
+tf.write('This test file has been read before.\n') # \n : Write in New Line
+
+# Close the Text File
+tf.close()
+
+# *************************************************************************************************
+
+# 4. Basic Programing: Conditions, Loops, (User-Defined) Functions
+# ------------------------------------------------------------------
+
+# 4.1. Conditional Statements : {<=, ==, >= / <, !=, >} | {if, elif, else}
+# ------------------------------------------------------------------------
+rn3 = input('Input a 3-digit Random Number between 0 & 1: ')
+rn2 = round(rn3, 2) # 2-digit Random Number
+print('Random Number is', rn2)
+if rn2 == 0.50:
+    print(rn2, 'is the median value')
+elif rn2 != 0.50 and rn2 >= 0.40 and rn2 <= 0.60:
+    print(rn2, 'is around median value')
+elif rn2 < 0.10 or rn2 > 0.90:
+    print(rn2,'is an outlier')
+else:
+    print(rn2, 'is between 0 & 1')
+
+# 4.2.1. Loops : while
+# --------------------
+'''
+1. Take a Random Integer between 1 & 9
+2. Count Down & Print all Numbers between the Random Integer and 0
+Example : If Random Integer = 3; then Count Down = 3, 2, 1, 0
+'''
+rn_int = input ('Input a Random Integer between 1 & 9: ') 
+print('Random Integer is', rn_int) 
+print ('Random Integer Count Down :')
+while rn_int >= 0:
+    print(rn_int)
+    rn_int = rn_int - 1
+
+# 4.2.2. Loops : for
+# ------------------
+'''
+1. Take a Random Integer between 0 & 9
+2. Calculate the Sum of all Numbers between 0 and the Random Integer
+Example : If Random Integer = 3; then Sum = 6 {0+1+2+3}
+'''
+rn_int = input ('Input a Random Integer between 1 & 9: ') 
+print('Random Integer is', rn_int)
+rn_sum = 0
+for num in range(rn_int + 1):
+    print(num)
+    rn_sum = rn_sum + num
+print('Sum of all Numbers till Random Integer is', rn_sum)
+
+# 4.3. Functions : User-Defined
+# -----------------------------
+''' 
+Create a Vowel List and Count Function 'vlc' such that, for a given Word, vlc:
+1. Creates a List of Vowels
+2. Counts the Number of Vowels 
+'''
+def vlc(word):
+    vowel = ['a', 'e', 'i', 'o', 'u']
+    vl = [] # empty vowel list
+    vc = 0 # vowel count
+    char_list = list(word)
+    for c in char_list:
+        if c in vowel:
+            vl.append(c)
+            vc = vc + 1
+    #print('vowel list:', vl)
+    #print('vowel count:', vc)
+    #return(None) 
+    return(vl, vc)        
+
+# User-Defined Function : Example
+test_word = 'anaconda'
+print('Word :', test_word)
+#vlc(test_word)
+vl, vc = vlc(test_word)   
+print('Vowel List :', vl) 
+print('Vowel Count :', vc)
+
+# *************************************************************************************************
+
+# 5. Basic list of Built-in Modules or Libraries
+# ----------------------------------------------
+
+'''
+import xxx | import xxx, yyy
+xxx, yyy : Python Built-in Module or External Library
+
+Example : import datetime | import os, sys 
+
+import xxx as x  | import xxx as x, yyy as y
+xxx, yyy : Python Built-in Module or External Library | x, y : Alias Name of xxx, yyy
+
+Example : import statsmodels as sm | import numpy as np, pandas as pd
+
+from zzz import xx | from zzz import xx, yy | from zzz import xx as x  | from zzz import xx as x, yy as y
+zzz : Main Module or Library | xx, yy : Sub Module or Function | x, y  : Alias Name of xx, yy
+
+Example : from random import randint | from scipy import linalg, stats | from matplotlib import pyplot as plt | from sklearn import preprocessing as pp, linear_model as lm
+
+from zzzz.zzz import xx | from zzzz.zzz import xx as x | from zzzz.zzz import xx as x | from zzzz.zzz import xx as x, yy as y
+
+Example : from sklearn.pipeline import make_pipeline | from sklearn.preprocessing import StandardScaler as ss | from sklearn.linear_model import Ridge, Lasso | from sklearn.neural_network import MLPClassifier as mlpc, MLPRegressor as mlpr
+'''
+
+# Important Python Built-in Moduldes
+'''
+1. Numeric Data Types & Math-Stat related Modules : array, numbers, random, math, statistics
+2. Text & Regular Expression related Modules : string, re
+3. Date & Time related Modules : calendar, datetime, time, timeit 
+4. Data & Object Types related Module : type
+5. Copy Data related Module : copy				
+6. Operating System & File Handling related Modules : os, sys, glob, shutil
+7. File Format & Language related Modules : csv, json, xml, sqlite3, tarfile, zipfile 
+8. Internet Interface related Modules : html, http, webbrowser, email		
+9. Programing or Coding related Modules : functools, trace, logging, warnings		
+10. Scheduling, Multiprocessing & Multithreading related Modules : sched, multiprocessing, threading		
+11. GUI related module : tkinter
+'''
+
+# Other Important Python External Libraries	
+'''
+numpy : Array related Library
+pandas : Dataframe related Library
+matplotlib, seaborn : Plotting | Visualization Library
+scipy : Mathematics & Statistics related Library
+statsmodels : Statistical Analysis Library
+scikit-learn : Machine Learning Library
+'''
+
+# =================================================================================================
+
